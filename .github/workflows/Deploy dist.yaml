@@ -1,0 +1,11 @@
+name: Deploy dist folder
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        run:
+          echo "Checking out code..."
+          echo "Current branch: ${{github.ref}}"
+          # git checkout ${{ github.ref }}
