@@ -7,6 +7,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: print node node-version
         run: |
-          echo "Checking out code..."
-          echo "Current branch: ${{ github.ref }}"
+          echo "Node version:"
+          node --version
+      - name: run npm install
+        run: |
+          echo "Installing dependencies..."
+          npm install
+      - name: run Tests
+        run: |
+          echo "Running tests..."
+          npm run test
+      - name: Completed job
+        run: |
+          echo "Job completed successfully!"
