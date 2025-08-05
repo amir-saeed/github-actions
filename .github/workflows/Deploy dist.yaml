@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        run:
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        run: |
           echo "Checking out code..."
-          echo "Current branch: ${{github.ref}}"
-          # git checkout ${{ github.ref }}
+          echo "Current branch: ${{ github.ref }}"
